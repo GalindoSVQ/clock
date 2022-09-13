@@ -1,0 +1,78 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: beige;
+  font-size: 16px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  padding: 0.5rem 0;
+  margin-top: auto;
+}
+
+footer > a {
+  color: gray;
+}
+
+footer svg {
+  height: 15px;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 10px solid white;
+  border-radius: 50%;
+  background-image: url("./assets/images/clock-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+}
+
+.clock-face::after {
+  content: "•";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4);
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+  width: 30%;
+  left: 20%;
+}
+
+.minute-hand {
+  width: 45%;
+  left: 5%;
+}
